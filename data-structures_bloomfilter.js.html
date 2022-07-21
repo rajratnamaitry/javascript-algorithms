@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>data-structures/bloomfilter.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Classes</li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html">AVLTree</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_getHeightAtNode">_getHeightAtNode</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_getNodesToRestructureInsert">_getNodesToRestructureInsert</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_getNodesToRestructureRemove">_getNodesToRestructureRemove</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_isBalancedAtNode">_isBalancedAtNode</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_leftLeft">_leftLeft</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_leftRight">_leftRight</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_maintainHeightBalanceProperty">_maintainHeightBalanceProperty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_restructure">_restructure</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_rightLeft">_rightLeft</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#_rightRight">_rightRight</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#find">find</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#findMax">findMax</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#findMin">findMin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#getDiameter">getDiameter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#getTreeHeight">getTreeHeight</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#inorder">inorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#insert">insert</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#isBalanced">isBalanced</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#lowestCommonAncestor">lowestCommonAncestor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#postorder">postorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#preorder">preorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.AVLTree.html#remove">remove</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.Node.html">Node</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.Node.html#value">value</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html">BinaryTree</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#find">find</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#findMax">findMax</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#findMin">findMin</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#getDiameter">getDiameter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#getHeight">getHeight</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#inorder">inorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#insert">insert</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#isBalanced">isBalanced</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#lowestCommonAncestor">lowestCommonAncestor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#postorder">postorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#preorder">preorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.BinaryTree.html#remove">remove</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.Node.html">Node</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.Node.html#value">value</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bitmap.html">Bitmap</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bitmap.html#exists">exists</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bitmap.html#get">get</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bitmap.html#getSize">getSize</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bitmap.html#set">set</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bloomfilter.html">Bloomfilter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bloomfilter.html#get">get</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.Bloomfilter.html#set">set</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_hash-table.Hashtable.html">Hashtable</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_hash-table.Hashtable.html#get">get</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_hash-table.Hashtable.html#hashCode">hashCode</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_hash-table.Hashtable.html#put">put</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_hash-table.Hashtable.html#remove">remove</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_hash-table.Node.html">Node</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_heap.Heap.html">Heap</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_heap.Heap.html#add">add</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_heap.Heap.html#changeKey">changeKey</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_heap.Heap.html#extract">extract</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_heap.Heap.html#isEmpty">isEmpty</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_heap.Heap.html#top">top</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_heap.Heap.html#update">update</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html">IntervalTree</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html#add">add</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html#contains">contains</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html#findMax">findMax</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html#height">height</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html#intersects">intersects</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html#remove">remove</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.IntervalTree.html#root">root</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.Node.html">Node</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.Node.html#interval">interval</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.Node.html#left">left</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.Node.html#max">max</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.Node.html#parentNode">parentNode</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.Node.html#right">right</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html">LinkedList</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#hasCycle">hasCycle</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#inorder">inorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#pop">pop</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#push">push</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#recursiveReverse">recursiveReverse</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#remove">remove</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#reverse">reverse</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#shift">shift</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_linked-list.LinkedList.html#unshift">unshift</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_linked-list.Node.html">Node</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_linked-list.Node.html#data">data</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_linked-list.Node.html#next">next</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_linked-list.Node.html#prev">prev</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_red-black-tree.RBTree.html">RBTree</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_red-black-tree.RBTree.html#get">get</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_red-black-tree.RBTree.html#levelOrderTraversal">levelOrderTraversal</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_red-black-tree.RBTree.html#put">put</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_size-balanced-tree-CreateSBTreeClass-SBTree.html">SBTree</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_size-balanced-tree-CreateSBTreeClass-SBTree.html#push">push</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.Node.html">Node</a></span></li><li class="nav-item"><span class="nav-item-type type-member">M</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.Node.html#value">value</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html">SplayTree</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#_getHeight">_getHeight</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#_splaylessSearch">_splaylessSearch</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#getDiameter">getDiameter</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#getHeight">getHeight</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#inorder">inorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#insert">insert</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#isBalanced">isBalanced</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#lowestCommonAncestor">lowestCommonAncestor</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#postorder">postorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#preorder">preorder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#remove">remove</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.SplayTree.html#search">search</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-graphs_spanning-trees_prim.Graph.html">Graph</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-graphs_spanning-trees_prim.Graph.html#prim">prim</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-sets_quickfind.QuickFind.html">QuickFind</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-sets_quickfind.QuickFind.html#connected">connected</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-sets_quickfind.QuickFind.html#union">union</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-sets_quickunion.QuickUnion.html">QuickUnion</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-sets_quickunion.QuickUnion.html#connected">connected</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-sets_quickunion.QuickUnion.html#union">union</a></span></li><li class="nav-heading"><span class="nav-item-type type-class">C</span><span class="nav-item-name"><a href="module-sets_weightquickunion.QuickUnion.html">QuickUnion</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-sets_weightquickunion.QuickUnion.html#connected">connected</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-sets_weightquickunion.QuickUnion.html#union">union</a></span></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-combinatorics_cartesianproduct.html">combinatorics/cartesianproduct</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-combinatorics_combinations.html">combinatorics/combinations</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-combinatorics_permutations.html">combinatorics/permutations</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-combinatorics_variations-repetition.html">combinatorics/variations-repetition</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-compression_burrows-wheeler_burrows-wheeler.html">compression/burrows-wheeler/burrows-wheeler</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-compression_LZW_LZW.html">compression/LZW/LZW</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_avl-tree.html">data-structures/avl-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_binary-search-tree.html">data-structures/binary-search-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_bloomfilter.html">data-structures/bloomfilter</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_edge.html">data-structures/edge</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_hash-table.html">data-structures/hash-table</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_heap.html">data-structures/heap</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_interval-tree.html">data-structures/interval-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_linked-list.html">data-structures/linked-list</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_red-black-tree.html">data-structures/red-black-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_segment-tree.html">data-structures/segment-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_size-balanced-tree.html">data-structures/size-balanced-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_splay-tree.html">data-structures/splay-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-data-structures_vertex.html">data-structures/vertex</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphics_graham.html">graphics/graham</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_others_tarjan-connected-components.html">graphs/others/tarjan-connected-components</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_others_topological-sort.html">graphs/others/topological-sort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_searching_bfs.html">graphs/searching/bfs</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_searching_dfs.html">graphs/searching/dfs</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_shortest-path_bellman-ford.html">graphs/shortest-path/bellman-ford</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-graphs_shortest-path_bellman-ford.html#.bellmanFord">bellmanFord</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_shortest-path_dijkstra.html">graphs/shortest-path/dijkstra</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_shortest-path_floyd-warshall.html">graphs/shortest-path/floyd-warshall</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-graphs_spanning-trees_prim.html">graphs/spanning-trees/prim</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-others_fibonacci.html">others/fibonacci</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-others_fibonacciMemory.html">others/fibonacciMemory</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-others_hanoi.html">others/hanoi</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-others_levenshtein-distance.html">others/levenshtein-distance</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-others_minCoinsChange.html">others/minCoinsChange</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-others_minimax.html">others/minimax</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-others_minkowski-distance.html">others/minkowski-distance</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-primes_is-prime.html">primes/is-prime</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-primes_prime-factor-tree.html">primes/prime-factor-tree</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-primes_sieve-of-atkins.html">primes/sieve-of-atkins</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-primes_sieve-of-eratosthenes.html">primes/sieve-of-eratosthenes</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_binarysearch.html">searching/binarysearch</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_interpolation-search.html">searching/interpolation-search</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_jumpsearch.html">searching/jumpsearch</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_knuth-morris-pratt.html">searching/knuth-morris-pratt</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_longest-common-subsequence.html">searching/longest-common-subsequence</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_longest-increasing-subsequence.html">searching/longest-increasing-subsequence</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_maximum-subarray.html">searching/maximum-subarray</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_maximum-subarray-divide-and-conquer.html">searching/maximum-subarray-divide-and-conquer</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_quickselect.html">searching/quickselect</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-searching_recursive-binarysearch.html">searching/recursive-binarysearch</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sets_quickfind.html">sets/quickfind</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sets_quickunion.html">sets/quickunion</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sets_weightquickunion.html">sets/weightquickunion</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-shuffle_fisheryates.html">shuffle/fisheryates</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-shuffle_richarddurstenfeld.html">shuffle/richarddurstenfeld</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_3-way-string-quicksort.html">sorting/3-way-string-quicksort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_bubblesort.html">sorting/bubblesort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_bucketsort.html">sorting/bucketsort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_countingsort.html">sorting/countingsort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_heapsort.html">sorting/heapsort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_insertion-binary-sort.html">sorting/insertion-binary-sort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_insertionsort.html">sorting/insertionsort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_lsd.html">sorting/lsd</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_mergesort.html">sorting/mergesort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_mergesort_merge.html">sorting/mergesort/merge</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_msd.html">sorting/msd</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_oddeven-sort.html">sorting/oddeven-sort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_quicksort-declarative.html">sorting/quicksort-declarative</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_quicksort-middle.html">sorting/quicksort-middle</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_radixsort.html">sorting/radixsort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_recursive-insertionsort.html">sorting/recursive-insertionsort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_selectionsort.html">sorting/selectionsort</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-sorting_shellsort.html">sorting/shellsort</a></span></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">data-structures/bloomfilter.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Bloomfilter and a bitmap.
+ * Probablistic data structure useful for deduplication
+ *
+ * @example
+ * // create a bloom filter with capacity of 1024 and 0.01 error rat
+ * var bloomfilter = new Bloomfilter(1024, 0.01);
+ * bloomfilter.set('hello');
+ * bloomfilter.get('hello') === true;
+ * bloomfilter.get('world') === false;
+ * @module data-structures/bloomfilter
+ */
+(function(exports) {
+  'use strict';
+
+  function randomUint32() {
+    return Math.floor(Math.random() * Math.pow(2, 32));
+  }
+  /**
+   * Calculate a 32 bit FNV-1a hash
+   * Found here: https://gist.github.com/vaiorabbit/5657561
+   * Ref.: http://isthe.com/chongo/tech/comp/fnv/
+   *
+   * @param {string} str the input value
+   * @param {boolean} [asString=false] set to true to return the hash value as
+   *     8-digit hex string instead of an integer
+   * @param {integer} [seed] optionally pass the hash of the previous chunk
+   * @returns {integer | string}
+   */
+  function hashFnv32a(str, asString, seed) {
+    /*jshint bitwise:false */
+    var i;
+    var l;
+    var hval = seed === undefined ? 0x811c9dc5 : seed;
+
+    for (i = 0, l = str.length; i &lt; l; i = i + 1) {
+      hval ^= str.charCodeAt(i);
+      hval +=
+        (hval &lt;&lt; 1) + (hval &lt;&lt; 4) + (hval &lt;&lt; 7) + (hval &lt;&lt; 8) + (hval &lt;&lt; 24);
+    }
+    if (asString) {
+      // Convert to 8 digit hex string
+      return ('0000000' + (hval >>> 0).toString(16)).substr(-8);
+    }
+    return hval >>> 0;
+  }
+
+  // Make a hash function
+  function mkHashFun(seed, limit) {
+    return function(value) {
+      return hashFnv32a(value, false, seed) % limit;
+    };
+  }
+  /**
+   * Create a bitmap with a given size
+   * Bit map is not resizeable
+   * @public
+   * @constructor
+   * @param {Number} size the size of the bitmap
+   */
+  exports.Bitmap = function(size) {
+    size = size || 1024;
+    if (size &lt; 0) {
+      throw new Error('The size cannot be negative');
+    }
+    this.size = size;
+    this.intSize = Math.ceil(size / 32); // number of underlying integers
+    // Create a 0 initialized array
+    this.intArray = Array.from({ length: this.intSize }, function() {
+      return 0;
+    });
+  };
+
+  /**
+   * Get the size of the bit map
+   * @public
+   * @return {Number} size of the bit map
+   */
+  exports.Bitmap.prototype.getSize = function() {
+    return this.size;
+  };
+
+  /**
+   * Get if a bit is set at a particular index
+   * @public
+   * @return {Boolean} true or false value of the bit
+   */
+  exports.Bitmap.prototype.exists = function(index) {
+    // Necessary boundary check
+    if (index &lt; 0 || index > this.size) {
+      throw new Error('Index out of bound')
+    }
+
+    // Calculate the offset within the int
+    var intOffset = index % 32;
+    var arrayOffset = Math.floor(index / 32); // the offset for the array
+    var mask = 1 &lt;&lt; intOffset;
+    return (mask &amp; this.intArray[arrayOffset]) !== 0;
+  };
+
+  /**
+   * Get the bit at a particular index
+   * @public
+   * @return {Number} true or false value of the bit
+   */
+  exports.Bitmap.prototype.get = function(index) {
+    // Necessary boundary check
+    if (index &lt; 0 || index > this.size) {
+      throw new Error('Index out of bound')
+    }
+
+    // Calculate the offset within the int
+    var intOffset = index % 32;
+    var arrayOffset = Math.floor(index / 32); // the offset for the array
+    var mask = 1 &lt;&lt; intOffset;
+    if ((mask &amp; this.intArray[arrayOffset]) !== 0) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
+
+  /**
+   * Set the bit at a particular index
+   * @public
+   * @param {Number} index the index to set
+   * @param {Boolean} value the value that is necessary
+   */
+  exports.Bitmap.prototype.set = function(index, value) {
+    // necessary boundary check
+    if (index &lt; 0 || index > this.size) {
+      throw new Error('Index out of bound')
+    }
+
+    var intOffset = index % 32; //calculate the offset within the int
+    var arrayOffset = Math.floor(index / 32); // the offset for the array
+    var mask = 1 &lt;&lt; intOffset;
+
+    // Check trutyness
+    if (value) {
+      this.intArray[arrayOffset] |= mask; // or operation
+    } else {
+      this.intArray[arrayOffset] &amp;= ~mask; // and opertation to set 0
+    }
+  };
+
+  /**
+   * Construct a bloom filter by given the capacity and the error rate, default error rate is 0.001
+   * @public
+   * @constructor
+   * @param {Number} capacity the maximum capacity to maintain the given error rate
+   * @param {Number} errorRate the error rate expected under maximum capacity
+   */
+  exports.Bloomfilter = function(capacity, errorRate) {
+    errorRate = errorRate || 0.001; // default error rate
+    if (errorRate > 1 || errorRate &lt; 0) {
+      throw new Error('The error rate range is outside of bound');
+    }
+    if (capacity &lt; 0) {
+      throw new Error('The capacity cannot be negative');
+    }
+    this.capacity = capacity;
+    this.errorRate = errorRate;
+
+    // Calculate the optimal size of the bitmap
+    var numBit = Math.ceil(
+      (capacity * Math.log(1.0 / errorRate)) / Math.pow(Math.log(2), 2)
+    );
+
+    // Calculate the optimal number of hash functions
+    this.numHashFunction = Math.ceil(Math.log(2), numBit / capacity);
+
+    // Create a bitmap
+    this.bitmap = new exports.Bitmap(numBit);
+
+    // Generate an array of hash functions
+    this.hashFunctions = Array.from(
+      { length: this.numHashFunction },
+      function() {
+        return mkHashFun(randomUint32(), numBit);
+      }.bind(this)
+    );
+  };
+
+  /**
+   * To check if an item is in the filter. If it is in, it will return true,
+   * if it is not in the filter, highly likely it will return false, but guaranteed
+   * @param {Number | String} value the value that we are trying to check in the filter
+   */
+  exports.Bloomfilter.prototype.get = function(value) {
+    value = String(value); // make it string
+    var hashes = this.hashFunctions.map(function(hashFct) {
+      return hashFct(value);
+    });
+
+    // if one of the bits is not set
+    for (var i = 0; i &lt; hashes.length; i = i + 1) {
+      if (this.bitmap.exists(hashes[i]) === false) {
+        return false;
+      }
+    }
+    return true;
+  };
+
+  /**
+   * To set(put) an item in the bloom filter
+   * @public
+   * @param {Number | String} value the value that is been set in the filter
+   */
+  exports.Bloomfilter.prototype.set = function(value) {
+    value = String(value); // make it string
+    var hashes = this.hashFunctions.map(function(hashFct) {
+      return hashFct(value);
+    });
+
+    // Set all the corresponding bits
+    for (var i = 0; i &lt; hashes.length; i = i + 1) {
+      this.bitmap.set(hashes[i], true);
+    }
+  };
+})(typeof window === 'undefined' ? module.exports : window);
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Jul 21 2022 22:17:22 GMT+0530 (India Standard Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
